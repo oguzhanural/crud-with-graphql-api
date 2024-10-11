@@ -1,4 +1,4 @@
-import { UserService } from "../services/userService";
+import UserService from "../services/userService";
 import { createToken } from "../utils/jwt";
 
 export const userResolvers = {
@@ -38,4 +38,4 @@ export const userResolvers = {
     },
 }
 
-
+export default userResolvers;

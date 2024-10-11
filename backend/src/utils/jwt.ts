@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { JWT_SECRET } from "../config/environment";
+import { JWT_SECRET } from "../config/environment.js";
 
 export const createToken = (userId: string): string => {
     if (!JWT_SECRET) {

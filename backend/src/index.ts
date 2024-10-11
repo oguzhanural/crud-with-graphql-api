@@ -3,12 +3,12 @@ import { expressMiddleware } from "@apollo/server/express4";
 import express from "express";
 import cors from "cors";
 import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
-import { json } from "body-parser";
+import  json  from "body-parser";
 import mongoose from "mongoose";
 import http from "http";
-import { typeDefs } from "./schemas/schema";
-import { userResolvers } from "./resolvers/userResolvers";
-import { MONGODB_URI } from "./config/environment";
+import typeDefs from "./schemas/schema.js";
+import userResolvers from "./resolvers/userResolvers.js";
+import { MONGODB_URI } from "./config/environment.js";
 
 interface MyContext {
     token?: string;
@@ -27,7 +27,7 @@ async function startApolloServer() {
     await server.start();
 
     try {
-        await mongoose.connect(MONGODB_URI);
+        await mongoose.connect(MONGODB_URI!);
         console.log("Connected to MongoDB");
     } catch (error) {
         console.log('Error connecting to MongoDB', error);
